@@ -11,20 +11,16 @@ import com.bit2016.mysite.vo.BoardVo;
 import com.bit2016.web.Action;
 import com.bit2016.web.util.WebUtil;
 
-public class DeleteFormAction implements Action {
+public class ModifyFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String users_no = request.getParameter("no");
-		BoardDao dao = new BoardDao();
-		Long no = Long.parseLong(users_no);
-		BoardVo vo = new BoardVo();
-		vo = dao.getView(no);
+		String no = request.getParameter("no");
 		
-		if (authUser.getName() == vo.getUsers_no()) {
-			new BoardDao().delete(no);
-		}
-		WebUtil.redirect(request, response, "/WEB-INF/views/board");
+		BoardVo vo = new BoardDao().getView(Long.parseLong(no));
+		
+		request.setAttribute("vo", vo);
+		WebUtil.forward(request, response, "/WEB-INF/views/board/modify.jsp");
 	}
 
 }

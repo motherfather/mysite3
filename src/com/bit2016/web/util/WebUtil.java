@@ -16,11 +16,8 @@ public class WebUtil {
 	public static void redirect(HttpServletRequest request, HttpServletResponse response, String url)  throws IOException, ServletException {
 		response.sendRedirect(url);
 	}
-<<<<<<< HEAD
 	
 	public static int checkIntParam(String s, int value) {
 		return (s != null && s.matches("\\d*\\.?\\d+")) ? Integer.parseInt(s) : value;
 	}
-=======
->>>>>>> branch 'master' of https://github.com/motherfather/mysite3.git
 }

@@ -8,11 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD
 import com.bit2016.mysite.action.guestbook.GuestbookActionFactory;
-=======
-import com.bit2016.guestbook.action.GuestbookActionFactory;
->>>>>>> branch 'master' of https://github.com/motherfather/mysite3.git
 import com.bit2016.web.Action;
 import com.bit2016.web.ActionFactory;
 

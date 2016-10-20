@@ -131,8 +131,7 @@ public class UserDao {
 				pstmt.setString(2, vo.getPassword());
 				pstmt.setString(3, vo.getGender());
 				pstmt.setLong(4, vo.getNo());
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 				pstmt.executeUpdate();
 				
 			} else if (vo.getPassword() == ""){
@@ -142,34 +141,7 @@ public class UserDao {
 				pstmt.setString(1, vo.getName());
 				pstmt.setString(2, vo.getGender());
 				pstmt.setLong(3, vo.getNo());
-=======
-				System.out.println(vo.getPassword());
 				
-				pstmt.executeUpdate();
-			} else if (vo.getPassword() == ""){
-				String sql = "update users set name=?, gender=? where no=?";
-				pstmt = conn.prepareStatement(sql);
-				
-				pstmt.setString(1, vo.getName());
-				pstmt.setString(2, vo.getGender());
-				pstmt.setLong(3, vo.getNo());
-				System.out.println(vo.getPassword());
-				
->>>>>>> branch 'master' of https://github.com/motherfather/mysite3.git
-=======
-				System.out.println(vo.getPassword());
-				
-				pstmt.executeUpdate();
-			} else if (vo.getPassword() == ""){
-				String sql = "update users set name=?, gender=? where no=?";
-				pstmt = conn.prepareStatement(sql);
-				
-				pstmt.setString(1, vo.getName());
-				pstmt.setString(2, vo.getGender());
-				pstmt.setLong(3, vo.getNo());
-				System.out.println(vo.getPassword());
-				
->>>>>>> branch 'master' of https://github.com/motherfather/mysite3.git
 				pstmt.executeUpdate();
 			}
 			
