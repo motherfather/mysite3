@@ -17,18 +17,25 @@
 	<c:import url="/WEB-INF/views/includes/header.jsp"/>
 		<div id="content">
 			<div id="guestbook">
+			<h1 align=center><img src="/mysite3/assets/images/guest2.png"></h1>
 				<form action="${pageContext.request.contextPath }/guestbook" method="post">
 					<input type="hidden" name="a" value="add">
-					<table>
+					<table id='table1'>
 						<tr>
-							<td>이름</td><td><input type="text" name="name"></td>
-							<td>비밀번호</td><td><input type="password" name="pass"></td>
+							<td class="info2"><label for='id2'><p id="id" title='이름'>&nbsp;</p></label></td>
+							<td rowspan=4><textarea name="content" id="content2" placeholder='내용을 입력하세요.'></textarea></td>
 						</tr>
 						<tr>
-							<td colspan=4><textarea name="content" id="content"></textarea></td>
+							<td><input id='id2' class="info" type="text" name="name" placeholder='이름' title="이름"></td>
 						</tr>
 						<tr>
-							<td colspan=4 align=right><input type="submit" VALUE=" 확인 "></td>
+							<td class="info2"><label for='pw2'><p id='password' title='비밀번호'>&nbsp;</p></label></td>
+						</tr>
+						<tr>
+							<td><input id='pw2' class="info" type="password" name="pass" placeholder='비밀번호' title="비밀번호"></td>
+						</tr>
+						<tr>
+							<td colspan=2 align=right><input id='submit' type="submit" VALUE="" title="완료"></td>
 						</tr>
 					</table>
 				</form>
