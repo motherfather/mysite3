@@ -6,8 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bit2016.mysite.dao.GuestBookDao;
-import com.bit2016.mysite.vo.GuestBookVo;
+import com.bit2016.mysite.dao.GuestbookDao;
+import com.bit2016.mysite.vo.GuestbookVo;
 import com.bit2016.web.Action;
 import com.bit2016.web.util.WebUtil;
 
@@ -19,12 +19,12 @@ public class AddAction implements Action {
 			String password = request.getParameter("pass");
 			String content = request.getParameter("content");
 			
-			GuestBookVo vo = new GuestBookVo();
+			GuestbookVo vo = new GuestbookVo();
 			vo.setName(name);
 			vo.setPassword(password);
 			vo.setContent(content);
 			
-			GuestBookDao dao = new GuestBookDao();
+			GuestbookDao dao = new GuestbookDao();
 			dao.insert(vo);
 			
 			WebUtil.redirect(request, response, "/mysite3/guestbook");

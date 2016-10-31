@@ -15,7 +15,7 @@
 #guestbook #password { height:22px; background:url('/mysite3/assets/images/password2.png') left no-repeat; }
 #guestbook td #content2 { border:0.5px solid #A9A9A9; padding:3px; width:98%; height:120px; outline:none; }
 #guestbook #submit { width:80px; height:30px; background:url('/mysite3/assets/images/submit2.png') no-repeat center; outline:none; border:0px; }
-#guestbook #submit:hover { background:url('/mysite3/assets/images/submit_.png') no-repeat center; outline:none; }
+#guestbook #submit:active { background:url('/mysite3/assets/images/submit_.png') no-repeat center; outline:none; }
 
 #guestbook ul { width:100%; margin-top:20px }
 #guestbook ul li { width:100%; margin-top:10px }
