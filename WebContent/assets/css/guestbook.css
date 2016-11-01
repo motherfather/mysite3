@@ -3,32 +3,20 @@
 
 #guestbook { margin:20px auto;	width:560px; }
 
-#guestbook form, #guestbook table { width:100% }
+#guestbook table { width:100% }
 
-#guestbook table, #guestbook table td { border:1px solid #111; }
-#guestbook #table1, #guestbook #table1 td { border:0; }
+#guestbook table, #guestbook table td { border:1px solid #00f; }
+#guestbook #table1, #guestbook #table1 td { border:0px solid #111; }
 #guestbook table td { height:10px; padding-right:5px }
 
 #guestbook .info { width:97%; outline:none; margin-bottom:9px; border:0px; }
 #guestbook .info2 { width:100px; outline:none; }
 #guestbook #id { height:22px; background:url('/mysite3/assets/images/name2.png') left no-repeat; }
 #guestbook #password { height:22px; background:url('/mysite3/assets/images/password2.png') left no-repeat; }
-#guestbook td #content2 { border:0.5px solid #A9A9A9; padding:3px; width:98%; height:120px; outline:none; }
+#gusetbook #table1 #box { border:1px solid #f00; width:100%; background-color:#f00; }
+#guestbook td #content2 { margin:auto; border:0.5px solid #A9A9A9; padding:3px; width:97%; height:100px; outline:none; text-align:center; margin:2px; }
 #guestbook #submit { width:80px; height:30px; background:url('/mysite3/assets/images/submit2.png') no-repeat center; outline:none; border:0px; }
 #guestbook #submit:hover { background:url('/mysite3/assets/images/submit_.png') no-repeat center; outline:none; }
 
 #guestbook ul { width:100%; margin-top:20px }
 #guestbook ul li { width:100%; margin-top:10px }
-#guestbook.delete-form { height:200px }
-#guestbook.delete-form form {
-	width:300px;
-	padding:10px;
-	border:1px solid #666;
-	border-radius: 10px;
-	margin:50px auto;
-}
-#guestbook.delete-form a	{ display:block; margin:20px auto; width:110px }
-
-#guestbook.delete-message p { padding:100px; height:50px; text-align:center }
-
-#guestbook textarea#content { width: 100%; border:none; height: 100px; resize: none; outline: none; }

@@ -23,7 +23,7 @@
 					<table id='table1'>
 						<tr>
 							<td class="info2"><label for='id2'><p id="id" title='이름'>&nbsp;</p></label></td>
-							<td rowspan=4><textarea name="content" id="content2" placeholder='내용을 입력하세요.'></textarea></td>
+							<td id="box" rowspan=4><textarea name="content" id="content2" placeholder='내용을 입력하세요.'></textarea></td>
 						</tr>
 						<tr>
 							<td><input id='id2' class="info" type="text" name="name" placeholder='이름' title="이름"></td>
@@ -43,7 +43,7 @@
 				<c:set var="count" value="${fn:length(list) }"/> 
 				<c:forEach items="${list }" var="vo" varStatus="status">
 					<li>
-						<table width=510 border=1>
+						<table id='table2'>
 							<tr>
 								<td>[${count-status.index }]</td>
 								<td>[${vo.no }]</td>
