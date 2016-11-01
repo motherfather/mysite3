@@ -13,22 +13,12 @@
 #guestbook .info2 { width:100px; outline:none; }
 #guestbook #id { height:22px; background:url('/mysite3/assets/images/name2.png') left no-repeat; }
 #guestbook #password { height:22px; background:url('/mysite3/assets/images/password2.png') left no-repeat; }
-#guestbook td #content2 { border:0.5px solid #A9A9A9; padding:3px; width:98%; height:120px; outline:none; }
+#guestbook td #content2 { border:0px solid #A9A9A9; border-radius:5px; padding:5px; width:98%; height:120px; outline:none; background-color:#D6D6D6; }
 #guestbook #submit { width:80px; height:30px; background:url('/mysite3/assets/images/submit2.png') no-repeat center; outline:none; border:0px; }
 #guestbook #submit:active { background:url('/mysite3/assets/images/submit_.png') no-repeat center; outline:none; }
 
-#guestbook ul { width:100%; margin-top:20px }
-#guestbook ul li { width:100%; margin-top:10px }
-#guestbook.delete-form { height:200px }
-#guestbook.delete-form form {
-	width:300px;
-	padding:10px;
-	border:1px solid #666;
-	border-radius: 10px;
-	margin:50px auto;
-}
-#guestbook.delete-form a	{ display:block; margin:20px auto; width:110px }
-
-#guestbook.delete-message p { padding:100px; height:50px; text-align:center }
-
-#guestbook textarea#content { width: 100%; border:none; height: 100px; resize: none; outline: none; }
+#list-guestbook p { width:100%; margin-top:5px; }
+#list-guestbook span{ display:inline-block; width:45%; color:#aaa; text-align:right; padding:8px 14px 0 0; }
+#list-guestbook .gb { display:inline-block; width:45%; color:#888; font-size:20px; text-align:center; }
+#list-guestbook div { width:90% auto; padding:3px 30px 3px 15px; background-color:#D6D6D6; border-radius:5px; }
+#list-guestbook a { display:block; position:relative; width:20px; height:20px; font-size:0px; background:url('/mysite3/assets/images/delete.png') 0 0 no-repeat; left:535px; top:21px; }

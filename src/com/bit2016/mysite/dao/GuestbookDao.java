@@ -25,6 +25,47 @@ public class GuestbookDao {
 		return conn;
 	}
 	
+	public GuestbookVo get(Long no) {
+		GuestbookVo vo = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = getConnection();
+			
+			String sql = "select no, name, content, to_char(reg_date, 'yyyy-mm-dd hh:mi:ss') from guestbook where no=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, no);
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				vo = new GuestbookVo();
+				vo.setNo(rs.getLong(1));
+				vo.setName(rs.getString(2));
+				vo.setContent(rs.getString(3));
+				vo.setReg_date(rs.getString(4));
+			}
+		} catch (SQLException e) {
+			System.out.println("error:" + e);
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				System.out.println("error:" + e);
+			}
+		}
+		return vo;
+	}
+	
 	public List<GuestbookVo> getList(int page) {
 		List<GuestbookVo> list = new ArrayList<GuestbookVo>();
 		Connection conn = null;
@@ -127,9 +168,13 @@ public class GuestbookDao {
 		return list;
 	}
 
-	public void insert(GuestbookVo vo) {
+	public Long insert(GuestbookVo vo) {
+		Long no = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		
 		try {
 			conn = getConnection();
 			String sql = "insert into guestbook values(guestbook_seq.nextval, ?, ?, ?, sysdate)";
@@ -140,10 +185,25 @@ public class GuestbookDao {
 			pstmt.setString(3, vo.getPassword());
 
 			pstmt.executeUpdate();
+			
+			// primary key(guestbook_seq.currval) 받아오기
+			stmt = conn.createStatement();
+			
+			sql = "select guestbook_seq.currval from dual";
+			rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				no = rs.getLong(1); 
+			}
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
 		} finally {
 			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (stmt != null) {
+					stmt.close();
+				}
 				if (pstmt != null) {
 					pstmt.close();
 				}
@@ -154,6 +214,7 @@ public class GuestbookDao {
 				System.out.println("error:" + e);
 			}
 		}
+		return no;
 	}
 	
 	public void delete(Long no, String password) {
